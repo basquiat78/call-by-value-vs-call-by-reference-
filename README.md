@@ -221,7 +221,7 @@ Test{name='changed'}
 "어랍쇼? 그대로네요?"
 
 이런 부분에서 오해를 할 수 있는 경우인데 이 경우에는 change 메소드가 호출되는 시점에 객체인 test는 복사되어 넘겨진게 맞다. 
-객체인 test는 '어떻게 보면' reference 타입처럼 넘어간 것처럼 보이지만 실제 내부 메커니즘은 reference의 사본이 넘어간다고 하니 엄밀히 말하면 이것은 Call By Reference가 아니라는 말이다.
+객체인 test는 *어떻게 보면* reference 타입처럼 넘어간 것처럼 보이지만 실제 내부 메커니즘은 reference의 사본이 넘어간다고 하니 엄밀히 말하면 이것은 Call By Reference가 아니라는 말이다.
 
 솔직히 내가 써놓고도 헛갈린다.
 
@@ -235,6 +235,8 @@ Test{name='changed'}
 넹 그런겁니다.
 
 [repl](https://repl.it/){: target="_blank"}
+
+~~이거 새창열기 안되는 거였엉?~~
 
 요기에서 테스트 해볼 수 있다.
 
