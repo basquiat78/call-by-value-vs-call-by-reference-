@@ -139,7 +139,7 @@ package io.basquiat;
 
 import io.basquiat.model.Test;
 
-public class jpaMain {
+public class Main {
 
     public static void change(Test t) {
         t.setName("changed");
