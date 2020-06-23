@@ -228,3 +228,30 @@ Test{name='changed'}
 # At A Glance
 사실 이건 신입 시절 이후 한번도 고민해 본적이 없었던 것이다. 
 그러다가 go에 관심을 가지면서 고민을 해보긴 했지만 현재 업무는 그렇지 않아서 잊고 있었는데 다시 한번 상기한다는 마인드로 흔적을 남기고자 한다.
+
+
+# 그럼 자바스크립트도 그런 거에요?
+
+넹 그런겁니다.
+
+[repl](https://repl.it)
+
+요기에서 테스트 해볼 수 있다.
+
+```
+function test(value) {
+  value.key = "change";
+  value = {};
+}
+
+
+let a = {'key': 'value'};
+console.log(a);
+test(a);
+console.log(a);
+
+------- 결과는요? -------
+{ key: 'value' }
+{ key: 'change' }
+
+```
