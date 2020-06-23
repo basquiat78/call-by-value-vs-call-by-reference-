@@ -234,7 +234,7 @@ Test{name='changed'}
 
 넹 그런겁니다.
 
-[repl](https://repl.it)
+[repl](https://repl.it){: target="_blank"}
 
 요기에서 테스트 해볼 수 있다.
 
