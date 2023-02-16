@@ -15,7 +15,7 @@
 
 Go를 예로 들어보자.
 
-```
+```go
 package main
 
 import "fmt"
@@ -50,7 +50,7 @@ hi! go
 
 그런데 다음과 같이 작성을 해보자
 
-```
+```go
 import "fmt"
 
 func testFunc(a *int) { // *가 이 변수는 레퍼런스라는 것을 표시한다.
@@ -106,7 +106,7 @@ hi! go
 
 간단한 Test 객체 하나 만들고
 
-```
+```java
 package io.basquiat.model;
 
 public class Test {
@@ -134,7 +134,7 @@ public class Test {
 그리고 다음과 같이
 
 
-```
+```java
 package io.basquiat;
 
 import io.basquiat.model.Test;
@@ -173,7 +173,7 @@ Test{name='changed'}
 
 그래서 다음과 같이 코드를 짠다.
 
-```
+```java
 package io.basquiat;
 
 import io.basquiat.model.Test;
@@ -221,9 +221,14 @@ Test{name='changed'}
 "어랍쇼? 그대로네요?"
 
 이런 부분에서 오해를 할 수 있는 경우인데 이 경우에는 change 메소드가 호출되는 시점에 객체인 test는 복사되어 넘겨진게 맞다. 
+
 객체인 test는 *어떻게 보면* reference 타입처럼 넘어간 것처럼 보이지만 실제 내부 메커니즘은 reference의 사본이 넘어간다고 하니 엄밀히 말하면 이것은 Call By Reference가 아니라는 말이다.
 
-솔직히 내가 써놓고도 헛갈린다.
+따라서 `test.setName("before");`코드의 결과는 레퍼런스의 값이 변경된다. 하지만 아까 말한대로 `t`는 복사된 객체이다. 또한 이 변수 `t`는 해당 메서드내에서만 유효하다.      
+
+그래서 이 `t`에 빈 객체를 할당한다해도 그것은 메서드가 끝나는 순간 유효하지 않는 값이 되버린다.
+
+결과적으로 이 메서드가 실행되면 레퍼런스의 값을 변경하기만 하고 끝난다.
 
 # At A Glance
 사실 이건 신입 시절 이후 한번도 고민해 본적이 없었던 것이다. 
@@ -240,7 +245,7 @@ Test{name='changed'}
 
 요기에서 테스트 해볼 수 있다.
 
-```
+```javascript
 function test(value) {
   value.key = "change";
   value = {};
